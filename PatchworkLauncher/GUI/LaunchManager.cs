@@ -155,9 +155,11 @@ namespace PatchworkLauncher {
 				catch (Exception ex) {
 					Command_Display_Error("Read settings file", _pathSettings, ex, "Patch list and other settings will be reset.");
 				}
-				
-				string folderDialogReason = null;
-				if (settings.BaseFolder == null) {
+
+                use64bitExecutable = settings.Use64bitExecutable;
+
+                string folderDialogReason = null;
+                if (settings.BaseFolder == null) {
 					folderDialogReason = "(no game folder has been specified)";
 				} else if (!Directory.Exists(settings.BaseFolder)) {
 					folderDialogReason = "(the previous game folder does not exist)";
@@ -254,7 +256,13 @@ namespace PatchworkLauncher {
 			set;
 		}
 
-		public int Command_MovePatch(int index, int offset) {
+        public bool use64bitExecutable
+        {
+            get;
+            set;
+        }
+
+        public int Command_MovePatch(int index, int offset) {
 
 			if (index < 0 || index >= Instructions.Count) {
 				throw new ArgumentException("Specified instruction was not in the sequence.");
@@ -357,7 +365,7 @@ namespace PatchworkLauncher {
 		public void Command_Launch() {
 			var process = new Process {
 				StartInfo = {
-					FileName = AppInfo.Executable.FullName,
+					FileName = (use64bitExecutable) ? AppInfo.Executable64.FullName : AppInfo.Executable.FullName,
 					WorkingDirectory = Path.GetDirectoryName(AppInfo.Executable.FullName)
 				},
 				EnableRaisingEvents = true
@@ -439,6 +447,7 @@ namespace PatchworkLauncher {
 			var xmlSettings = XmlSettings.FromInstructionSeq(Instructions);
 			
 			xmlSettings.BaseFolder = BaseFolder;
+            xmlSettings.Use64bitExecutable = use64bitExecutable;
 			_settingsSerializer?.Serialize(xmlSettings, _pathSettings);
 			_prefsSerializer?.Serialize(Preferences, _pathPrefsFile);
 			if (Application.MessageLoop) {

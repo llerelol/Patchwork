@@ -40,7 +40,11 @@
 			this.guiTestRun = new System.Windows.Forms.Button();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.button1 = new System.Windows.Forms.Button();
+            this.archRdo32 = new System.Windows.Forms.RadioButton();
+            this.archRdo64 = new System.Windows.Forms.RadioButton();
+            this.archgBox = new System.Windows.Forms.GroupBox();
 			((System.ComponentModel.ISupportInitialize)(this.guiGameIcon)).BeginInit();
+            this.archgBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// guiGameName
@@ -62,7 +66,8 @@
 			this.guiGameVersion.BackColor = System.Drawing.Color.Transparent;
 			this.guiGameVersion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.guiGameVersion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.guiGameVersion.Location = new System.Drawing.Point(532, 43);
+            this.guiGameVersion.Location = new System.Drawing.Point(376, 38);
+            this.guiGameVersion.Margin = new System.Windows.Forms.Padding(0);
 			this.guiGameVersion.Name = "guiGameVersion";
 			this.guiGameVersion.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.guiGameVersion.Size = new System.Drawing.Size(70, 18);
@@ -78,11 +83,11 @@
 			this.guiLaunchWithMods.FlatAppearance.BorderColor = System.Drawing.Color.Black;
 			this.guiLaunchWithMods.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure;
 			this.guiLaunchWithMods.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
-			this.guiLaunchWithMods.Font = new System.Drawing.Font("Georgia", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guiLaunchWithMods.Location = new System.Drawing.Point(21, 65);
+            this.guiLaunchWithMods.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guiLaunchWithMods.Location = new System.Drawing.Point(12, 82);
 			this.guiLaunchWithMods.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.guiLaunchWithMods.Name = "guiLaunchWithMods";
-			this.guiLaunchWithMods.Size = new System.Drawing.Size(537, 74);
+            this.guiLaunchWithMods.Size = new System.Drawing.Size(437, 36);
 			this.guiLaunchWithMods.TabIndex = 3;
 			this.guiLaunchWithMods.Text = "Launch with Mods";
 			this.guiLaunchWithMods.UseVisualStyleBackColor = false;
@@ -96,11 +101,11 @@
 			this.guiLaunchNoMods.FlatAppearance.BorderColor = System.Drawing.Color.Black;
 			this.guiLaunchNoMods.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure;
 			this.guiLaunchNoMods.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
-			this.guiLaunchNoMods.Font = new System.Drawing.Font("Georgia", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guiLaunchNoMods.Location = new System.Drawing.Point(21, 143);
+            this.guiLaunchNoMods.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guiLaunchNoMods.Location = new System.Drawing.Point(12, 126);
 			this.guiLaunchNoMods.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.guiLaunchNoMods.Name = "guiLaunchNoMods";
-			this.guiLaunchNoMods.Size = new System.Drawing.Size(598, 63);
+            this.guiLaunchNoMods.Size = new System.Drawing.Size(437, 36);
 			this.guiLaunchNoMods.TabIndex = 4;
 			this.guiLaunchNoMods.Text = "Launch without Mods";
 			this.guiLaunchNoMods.UseVisualStyleBackColor = false;
@@ -114,12 +119,12 @@
 			this.guiActiveMods.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure;
 			this.guiActiveMods.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
 			this.guiActiveMods.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guiActiveMods.Location = new System.Drawing.Point(478, 214);
+            this.guiActiveMods.Location = new System.Drawing.Point(478, 126);
 			this.guiActiveMods.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.guiActiveMods.Name = "guiActiveMods";
 			this.guiActiveMods.Size = new System.Drawing.Size(141, 36);
 			this.guiActiveMods.TabIndex = 5;
-			this.guiActiveMods.Text = "Active Mods";
+            this.guiActiveMods.Text = "Choose Mods";
 			this.guiActiveMods.UseVisualStyleBackColor = false;
 			this.guiActiveMods.Click += new System.EventHandler(this.guiActiveMods_Click);
 			// 
@@ -130,7 +135,7 @@
 			this.guiPwVersion.BackColor = System.Drawing.Color.Transparent;
 			this.guiPwVersion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.guiPwVersion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.guiPwVersion.Location = new System.Drawing.Point(201, 256);
+            this.guiPwVersion.Location = new System.Drawing.Point(201, 181);
 			this.guiPwVersion.Name = "guiPwVersion";
 			this.guiPwVersion.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.guiPwVersion.Size = new System.Drawing.Size(35, 18);
@@ -145,7 +150,7 @@
 			this.label2.BackColor = System.Drawing.Color.Transparent;
 			this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.label2.Location = new System.Drawing.Point(118, 255);
+            this.label2.Location = new System.Drawing.Point(118, 180);
 			this.label2.Name = "label2";
 			this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.label2.Size = new System.Drawing.Size(80, 18);
@@ -171,11 +176,11 @@
 			this.guiChangeFolder.FlatAppearance.BorderColor = System.Drawing.Color.Black;
 			this.guiChangeFolder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure;
 			this.guiChangeFolder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
-			this.guiChangeFolder.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guiChangeFolder.Location = new System.Drawing.Point(21, 214);
+            this.guiChangeFolder.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guiChangeFolder.Location = new System.Drawing.Point(478, 179);
 			this.guiChangeFolder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.guiChangeFolder.Name = "guiChangeFolder";
-			this.guiChangeFolder.Size = new System.Drawing.Size(160, 36);
+            this.guiChangeFolder.Size = new System.Drawing.Size(141, 20);
 			this.guiChangeFolder.TabIndex = 9;
 			this.guiChangeFolder.Text = "Change Game Folder";
 			this.guiChangeFolder.UseVisualStyleBackColor = false;
@@ -189,10 +194,10 @@
 			this.guiTestRun.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure;
 			this.guiTestRun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
 			this.guiTestRun.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guiTestRun.Location = new System.Drawing.Point(564, 65);
+            this.guiTestRun.Location = new System.Drawing.Point(478, 82);
 			this.guiTestRun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.guiTestRun.Name = "guiTestRun";
-			this.guiTestRun.Size = new System.Drawing.Size(55, 74);
+            this.guiTestRun.Size = new System.Drawing.Size(141, 36);
 			this.guiTestRun.TabIndex = 10;
 			this.guiTestRun.Text = "Test Run";
 			this.guiTestRun.UseVisualStyleBackColor = false;
@@ -203,7 +208,7 @@
 			this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.linkLabel1.AutoSize = true;
 			this.linkLabel1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-			this.linkLabel1.Location = new System.Drawing.Point(18, 254);
+            this.linkLabel1.Location = new System.Drawing.Point(18, 179);
 			this.linkLabel1.Name = "linkLabel1";
 			this.linkLabel1.Size = new System.Drawing.Size(103, 18);
 			this.linkLabel1.TabIndex = 11;
@@ -218,23 +223,57 @@
 			this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
 			this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure;
 			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
-			this.button1.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(612, 3);
+            this.button1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(308, 179);
 			this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(23, 35);
+            this.button1.Size = new System.Drawing.Size(141, 20);
 			this.button1.TabIndex = 12;
-			this.button1.Text = "?";
+            this.button1.Text = "Read Me";
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
+            // 
+            // archRdo32
+            // 
+            this.archRdo32.AutoSize = true;
+            this.archRdo32.Location = new System.Drawing.Point(25, 16);
+            this.archRdo32.Name = "archRdo32";
+            this.archRdo32.Size = new System.Drawing.Size(43, 18);
+            this.archRdo32.TabIndex = 13;
+            this.archRdo32.Text = "x32";
+            this.archRdo32.UseVisualStyleBackColor = true;
+            this.archRdo32.CheckedChanged += new System.EventHandler(this.archRdo_CheckedChanged);
+            // 
+            // archRdo64
+            // 
+            this.archRdo64.AutoSize = true;
+            this.archRdo64.Location = new System.Drawing.Point(80, 16);
+            this.archRdo64.Name = "archRdo64";
+            this.archRdo64.Size = new System.Drawing.Size(43, 18);
+            this.archRdo64.TabIndex = 14;
+            this.archRdo64.Text = "x64";
+            this.archRdo64.UseVisualStyleBackColor = true;
+            this.archRdo64.CheckedChanged += new System.EventHandler(this.archRdo_CheckedChanged);
+            // 
+            // archgBox
+            // 
+            this.archgBox.Controls.Add(this.archRdo32);
+            this.archgBox.Controls.Add(this.archRdo64);
+            this.archgBox.Location = new System.Drawing.Point(478, 18);
+            this.archgBox.Name = "archgBox";
+            this.archgBox.Size = new System.Drawing.Size(141, 43);
+            this.archgBox.TabIndex = 15;
+            this.archgBox.TabStop = false;
+            this.archgBox.Text = "Platform";
+            // 
 			// guiHome
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Linen;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(639, 281);
+            this.ClientSize = new System.Drawing.Size(639, 206);
+            this.Controls.Add(this.archgBox);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.guiTestRun);
@@ -255,6 +294,8 @@
 			this.Text = "Patchwork Launcher";
 			this.Load += new System.EventHandler(this.guiHome_Load);
 			((System.ComponentModel.ISupportInitialize)(this.guiGameIcon)).EndInit();
+            this.archgBox.ResumeLayout(false);
+            this.archgBox.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -274,6 +315,9 @@
 		private System.Windows.Forms.Button guiTestRun;
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton archRdo32;
+        private System.Windows.Forms.RadioButton archRdo64;
+        private System.Windows.Forms.GroupBox archgBox;
 	}
 }
 

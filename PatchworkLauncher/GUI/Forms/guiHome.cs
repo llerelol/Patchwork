@@ -43,7 +43,20 @@ namespace PatchworkLauncher {
 			guiPwVersion.Text = PatchworkInfo.Version;
 			guiGameName.Text = Manager.AppInfo.AppName;
 			guiGameVersion.Text = Manager.AppInfo.AppVersion;
-			var isEnabled = Manager.State.Convert(x => x == LaunchManagerState.Idle);
+            if (!Manager.AppInfo.MultiArch)
+            {
+                archgBox.Hide();
+                archRdo32.Hide();
+                archRdo64.Hide();
+            }
+            else
+            {
+                if (Manager.use64bitExecutable)
+                    archRdo64.Select();
+                else
+                    archRdo32.Select();
+            }
+            var isEnabled = Manager.State.Convert(x => x == LaunchManagerState.Idle);
 			this.Bind(x => x.Enabled).Binding = isEnabled.ToBinding(BindingMode.IntoTarget);
 			isEnabled.HasChanged += x => {
 				if (x.Value) {
@@ -84,5 +97,10 @@ namespace PatchworkLauncher {
 		{
 			Manager.Command_Open_Readme();
 		}
-	}
+
+        private void archRdo_CheckedChanged(object sender, EventArgs e)
+        {
+            Manager.use64bitExecutable = (Manager.AppInfo.MultiArch && archRdo64.Checked) ? true : false;
+        }
+    }
 }

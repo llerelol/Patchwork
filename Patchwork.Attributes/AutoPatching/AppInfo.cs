@@ -9,17 +9,35 @@ namespace Patchwork.AutoPatching {
 	[Serializable]
 	public sealed class AppInfo {
 		/// <summary>
-		/// The executable file of the application.
+		/// The (default|32bit) executable file of the application.
 		/// </summary>
 		public FileInfo Executable {
 			get;
 			set;
 		}
 
-		/// <summary>
-		/// A string that describes the version of the application.
+        /// <summary>
+		/// The (64bit) executable file of the application.
 		/// </summary>
-		public string AppVersion {
+        public FileInfo Executable64
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Defines if game has multiple executables for 32\64 bit architecture
+        /// </summary>
+        public bool MultiArch
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// A string that describes the version of the application.
+        /// </summary>
+        public string AppVersion {
 			get;
 			set;
 		}
